@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio Cristiane Santos da Cunha</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .container{
+            display: grid;
+        }
+
+        header{
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: #754059;
+        }
+
+        .menu{
+            grid-column-start: 6;
+            grid-column-end: 12;
+            justify-content: center; /*centraliza o menu*/
+            gap: 20px; /*https://nekocalc.com/px-to-rem-converter*/
+        }
+
+        .imagem_Cristiane{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .principal{
+            grid-column-start: 4;
+            grid-column-end: 12;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: justify;
+        }
+
+        footer{
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: #754059;
+            color: white;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+            color: #754059;
+        }
+
+        a,
+        a:link{
+            text-decoration: none;
+            padding: 8px 16px;
+            border: solid #754059 1px;
+        }
+
+        li{
+            float: left;
+        }
+
+        a:hover{ 
+            background-color: #754059;
+            color: white;
+        }  /* menu com o cursor em cima de branco fica rosa*/
+
+        /* media query para dispositivos móveis */
+
+        @media only screen and (max-width: 767px) {
+            .wrapper{
+                grid-column-start: 1;
+                grid-column-end: 1;
+            }
+
+            .imagem_Cristiane{
+                grid-column-start: 1;
+                grid-column-end: 1;
+            }
+
+            .principal{
+                grid-column-start: 1;
+                grid-column-end: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="container">
+        <h1 style="color: white; text-align: center;" >Biografia Leonardo da Vinci 
+        </h1>
+        <br>
+
+
+    </header>
+
+    <nav class="container menu">
+        <ul>
+            <li><a href="index.html">Biografia</a></li>
+            <li><a href="obras.html">Obras</a></li>
+            <li><a href="curiosidades.html">Curiosidades</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="container wrapper">
+        <aside class="imagem_leonardo">
+            <img src="leonardo-da-vinci.png">
+            <div class="infos">
+                <p><strong>Ocupação</strong>Pintor Italiano</p>
+                <p><strong>Data de Nascimento</strong>15/04/1452</p>
+                <p><strong>Data da Morte</strong>02/05/1519 (aos 67 anos)</p>
+            </div>
+
+        </aside>
+        <section class="principal">
+            <h1>Leonardo da Vinci</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id impedit possimus consequatur iste similique architecto veritatis tenetur nobis adipisci eum beatae assumenda quia, voluptates magni numquam odit quo doloremque libero? Ex assumenda necessitatibus rerum omnis repellat error eius aliquam obcaecati consequatur, eaque exercitationem cupiditate dolorum accusamus sit. Amet odit impedit non quos assumenda voluptatem suscipit explicabo, dolore cupiditate praesentium odio iste vel nemo, iusto ducimus provident. Ut ex odio obcaecati modi, sequi non error aperiam, quas quibusdam repellat aliquam earum cumque est. Quidem, consectetur odit, aspernatur a quae voluptatum laborum velit tenetur iusto itaque ipsum doloribus omnis cupiditate non repudiandae, at excepturi fuga suscipit officia. Facilis, in repellendus ullam expedita fugiat, quia fugit illo dolorum dolore non molestias nobis labore incidunt, doloremque ut sunt nostrum numquam! Nam illum autem enim! Optio laborum, tempora quis quo quas quam corrupti delectus voluptatum. Totam dolores dolor velit in fugit perferendis quasi unde quam!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique quis aliquam iure atque minus aut quasi et assumenda, quia illo recusandae eos soluta laudantium aliquid. Consequuntur obcaecati dolorum fugiat dignissimos! Accusamus qui ex error at eligendi, quos dignissimos eum deserunt maxime fuga, doloremque necessitatibus aut. Facilis unde nisi neque rerum iste nulla asperiores doloribus earum voluptatibus esse suscipit iusto minus consequuntur accusantium rem inventore explicabo, reiciendis quis magnam dolores velit, commodi sit aspernatur. Accusantium, esse. Voluptatibus, necessitatibus a ea quod in iusto! Quis doloremque reiciendis dolores aliquam ducimus, incidunt inventore dolorem laborum asperiores nihil quo, assumenda sit laudantium! Beatae autem natus ipsam explicabo praesentium rerum nulla provident assumenda, ad eum iste unde cumque exercitationem doloribus maiores. Quisquam quod quia deserunt incidunt? Eius natus deserunt fugiat similique et quas nesciunt! Eveniet suscipit voluptatibus, commodi molestias accusamus, repellendus rerum veritatis qui obcaecati animi soluta aspernatur numquam eaque cupiditate placeat sunt labore aut!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio corporis animi voluptas est facere distinctio accusantium, doloremque perferendis neque reprehenderit fugit assumenda eum molestias repellendus nesciunt ipsam ea deleniti velit, numquam id aliquid alias. Repudiandae dignissimos soluta doloribus reprehenderit voluptatem, nemo autem eveniet minima sint. Eum maxime tempore pariatur, mollitia distinctio reprehenderit repellendus amet possimus, voluptates voluptate assumenda corporis ex ad aut at sed soluta rerum officiis quo eveniet nobis architecto cum molestiae labore. Nam animi qui quibusdam aut eveniet error blanditiis molestiae rerum eligendi quod autem dolor, itaque a quidem rem, aperiam ratione nulla exercitationem quas. Nisi corporis quidem esse, eligendi consectetur nostrum accusamus ducimus voluptatum magni sunt quo atque laboriosam ratione reprehenderit pariatur. At, asperiores. Enim quaerat, molestiae veniam, ab reprehenderit eius et facilis sit dolorem ipsa sapiente voluptatum dolor accusamus assumenda reiciendis libero error magni. Ipsam velit sit tenetur, facere similique eligendi corrupti tempore odit beatae ea!</p>
+
+        </section>
+
+    </div>
+
+    <footer class="container">
+        <h1>Desenvolvido para fins educacionais</h1>
+    </footer>
+
+</body>
+</html>
