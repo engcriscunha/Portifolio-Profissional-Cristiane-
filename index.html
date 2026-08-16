@@ -69,20 +69,109 @@
             border-radius: 4px; 
         }
         
-        
+        /* Efeito de hover nos links do menu */
 
-        .imagem_Cristiane{
+        .menu a:hover { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Página atual */
+
+        .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Botão tema */
+
+        .botao-tema { 
+            border: none; 
+            background-color: transparent; 
+            font-size: 22px; 
+            cursor: pointer; 
+            padding: 8px; 
+        }
+
+        /* Área principal da página */
+
+        .wrapper { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            display: grid; 
+
+            /* Divide o conteúdo em duas colunas: uma para a imagem e outra para o texto. */ 
+            grid-template-columns: 30% 70%;
+            align-items: center;
+            padding: 30px 5%;
+        }
+
+        /* Estilo da imagem do perfil */
+
+        .imagem_Cristiane img { 
+            width: 250px; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 5px solid #754059; 
             grid-column-start: 1;
             grid-column-end: 3;
         }
 
-        .principal{
-            grid-column-start: 4;
-            grid-column-end: 12;
-            padding-left: 15px;
-            padding-right: 15px;
-            text-align: justify;
+        /* Informações da imagem do perfil */
+
+        infos { 
+            padding: 10px; 
         }
+
+        .texto-destaque { 
+            color: #754059; 
+            font-weight: bold; 
+        }
+
+        .infos h1 { 
+            color: #754059; 
+        }
+        
+        /* Conteúdo principal da página */
+
+        .principal { 
+            grid-column-start: 2; 
+            grid-column-end: 3; 
+            padding-left: 15px; 
+            padding-right: 15px; 
+            text-align: justify; 
+        }
+
+        .principal h1 { 
+            color: #754059; 
+        }
+
+       /* Áreas de interesse */
+
+       .interesses { 
+            padding: 30px; 
+            text-align: center; 
+        }
+
+        .interesses h2 { 
+            color: #754059; 
+        }
+
+        .interesses-lista { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 10px;  
+        }
+
+        .interesses-lista span { 
+            background-color: #f1e5eb; 
+            color: #754059; 
+            padding: 10px 15px; 
+            border-radius: 20px; 
+        }
+        
 
         footer{
             grid-column-start: 1;
