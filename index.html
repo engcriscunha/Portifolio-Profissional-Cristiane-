@@ -246,32 +246,12 @@
         }
 
 
-        body.tema-escuro { background-color: #222; color: white; }        
-
-        ul{
-            list-style-type: none;
-            color: #754059;
-        }
-
-        a,
-        a:link{
-            text-decoration: none;
-            padding: 8px 16px;
-            border: solid #754059 1px;
-        }
-
-        li{
-            float: left;
-        }
-
-        a:hover{ 
-            background-color: #754059;
-            color: white;
-        }  /* menu com o cursor em cima de branco fica rosa*/
-
         /* media query para dispositivos móveis */
 
         @media only screen and (max-width: 767px) {
+            
+            /* No modo mobile, o layout muda para uma única coluna, com a imagem e o texto empilhados verticalmente. */
+            
             .wrapper{
                 grid-column-start: 1;
                 grid-column-end: 1;
@@ -285,6 +265,33 @@
             .principal{
                 grid-column-start: 1;
                 grid-column-end: 1;
+            }
+
+            .menu{
+                flex-wrap: wrap;
+            }
+            
+
+            .menu ul { 
+                display: flex; 
+                flex-direction: column; 
+                width: 100%; 
+                align-items: center; 
+            }
+
+            .menu li { 
+                float: none; 
+                margin-bottom: 5px; 
+            }
+
+            .menu a { 
+                width: 150px; 
+                text-align: center; 
+            }
+            
+            .imagem_Cristiane img { 
+                width: 200px; 
+                height: 200px; 
             }
         }
 
