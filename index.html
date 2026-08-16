@@ -172,14 +172,81 @@
             border-radius: 20px; 
         }
         
+        /* Seção de destaque */
 
-        footer{
-            grid-column-start: 1;
-            grid-column-end: 12;
-            background-color: #754059;
-            color: white;
-            text-align: center;
+        .destaque { 
+            text-align: center; 
+            padding: 30px; 
         }
+
+        .destaque h2 { 
+            color: #754059; 
+        }
+
+        .botoes-navegacao { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+
+        
+        .botao { 
+            display: inline-block; 
+            background-color: #754059; 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+        }
+        
+        .botao:hover { 
+            background-color: #5c3044; 
+        }
+        
+        /* Rodapé da página */
+
+        footer { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            background-color: #754059; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        
+        /* Tema escuro */
+
+        body.tema-escuro { 
+            background-color: #222; 
+            color: white; 
+        }
+
+        body.tema-escuro .menu { 
+            background-color: #333; 
+        }
+        
+        body.tema-escuro .menu a { 
+            color: white; 
+            border-color: white; 
+        }
+
+        body.tema-escuro .menu a:hover, body.tema-escuro .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        body.tema-escuro .interesses-lista span { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        body.tema-escuro .principal h1, body.tema-escuro .infos h1, body.tema-escuro .texto-destaque, body.tema-escuro .interesses h2, body.tema-escuro .destaque h2 { 
+            color: #e2a9c1; 
+        }
+
+
+        body.tema-escuro { background-color: #222; color: white; }        
 
         ul{
             list-style-type: none;
