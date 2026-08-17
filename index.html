@@ -214,6 +214,11 @@
             text-align: center; 
             padding: 20px; 
         }
+
+        footer p {
+            font-size: 12px;
+        }
+        
         
         /* Tema escuro */
 
@@ -308,7 +313,7 @@
 
     <nav class="container menu">
         <ul>
-            <li><a href="index.html">Sobre mim</a></li>
+            <li><a href="index.html" class="ativo">Sobre mim</a></li>
             <li><a href="formacao.html">Formação</a></li>
             <li><a href="portifolio.html">Portifólio</a></li>
             <li><a href="contato.html">Contato</a></li>
@@ -375,8 +380,28 @@
 
     
     <footer class="container">
-        <h1>© 2026 Cristiane Santos da Cunha</h1>
+        <p>© 2026 Desenvolvido por Cristiane Santos da Cunha</p>
     </footer>
 
+    <!-- Script para alternar entre tema claro e escuro -->
+    <script>
+        const botaoTema = document.getElementById('botao-tema');
+        const body = document.body;
+
+        botaoTema.addEventListener('click', function () {
+            body.classList.toggle('tema-escuro');
+
+
+        if (body.classList.contains('tema-escuro')) {
+            botaoTema.textContent = '☀️'; 
+        // Ícone do sol para tema escuro
+        } else {
+            botaoTema.textContent = '🌙'; 
+        // Ícone da lua para tema claro
+        }});
+
+    </script>
+
+        
 </body>
 </html>
