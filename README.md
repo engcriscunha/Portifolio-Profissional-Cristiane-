@@ -1,2 +1,2 @@
-# Portifolio-Profissional-Cristiane-
-Desenvolvimento do portifólio profissional de Cristiane Santos da Cunha
+# Portfólio-Profissional-Cristiane-
+Desenvolvimento do portfólio profissional de Cristiane Santos da Cunha
