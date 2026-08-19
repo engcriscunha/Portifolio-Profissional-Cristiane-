@@ -1,89 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosidades</title>
+    <title>Portfólio Cristiane Santos da Cunha</title>
+
+    <!-- CONFIGURAÇÃO CSS -->
     <style>
-        body{
-            margin: 0;
+
+    /* Configurações gerais */
+
+        body { 
+            margin: 0; font-family: Arial, Helvetica, sans-serif; background-color: white; color: #333; 
+            
+        /* Transição suave para o tema escuro */ 
+        
+            transition: background-color 0.3s, color 0.3s; 
         }
+
+    /* Container principal da página */
 
         .container{
             display: grid;
         }
 
-        header{
-            grid-column-start: 1;
-            grid-column-end: 12;
-            background-color: #506e6a;
+    /* Cabeçalho da página */
+
+        header { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            background-color: #754059; 
+            color: white; 
+            padding: 20px; 
         }
 
-        .menu{
-            grid-column-start: 6;
-            grid-column-end: 12;
-            justify-content: center; /*centraliza o menu*/
-            gap: 20px; /*https://nekocalc.com/px-to-rem-converter*/
+    /* Menu de navegação */
+
+        .menu { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            padding: 15px; 
+            background-color: white; 
+        }
+    
+        .menu ul { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        .menu li { 
+            float: left; 
         }
 
-        .imagem_leonardo{
+        /* Estilo dos links do menu */
+
+        .menu a, .menu a:link { 
+            display: block; 
+            text-decoration: none; 
+            color: #754059; 
+            padding: 8px 16px; 
+            border: solid #754059 1px; 
+            margin-right: 5px; 
+            border-radius: 4px; 
+        }
+        
+        /* Efeito de hover nos links do menu */
+
+        .menu a:hover { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Página atual */
+
+        .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Botão tema */
+
+        .botao-tema { 
+            border: none; 
+            background-color: transparent; 
+            font-size: 22px; 
+            cursor: pointer; 
+            padding: 8px; 
+        }
+
+        /* Área principal da página */
+
+        .wrapper { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            display: grid; 
+
+        /* Divide o conteúdo em duas colunas: uma para a imagem e outra para o texto. */ 
+            grid-template-columns: 30% 70%;
+            align-items: center;
+            padding: 30px 5%;
+        }
+
+        /* Estilo da imagem do perfil */
+
+        .imagem_Cristiane img { 
+            width: 250px; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 5px solid #754059; 
             grid-column-start: 1;
             grid-column-end: 3;
         }
 
-        .principal{
-            grid-column-start: 4;
-            grid-column-end: 12;
-            padding-left: 15px;
-            padding-right: 15px;
+        /* Informações da imagem do perfil */
+
+        .infos { 
+            padding: 10px; 
+        }
+
+        .texto-destaque { 
+            color: #754059; 
+            font-weight: bold; 
+        }
+
+        .infos h1 { 
+            color: #754059; 
             text-align: justify;
+            font-size: 18px;
         }
 
-        footer{
-            grid-column-start: 1;
-            grid-column-end: 12;
-            background-color: #506e6a;
-            color: white;
-            text-align: center;
+        .infos p { 
+            color: #754059; 
+            text-align: justify;
+            font-size: 15px;
+        }
+        
+        /* Conteúdo principal da página */
+
+        .principal { 
+            grid-column-start: 2; 
+            grid-column-end: 3; 
+            padding-left: 15px; 
+            padding-right: 15px; 
+            text-align: justify; 
         }
 
-        ul{
-            list-style-type: none;
-            color: #506e6a;
+        .principal h1 { 
+            color: #754059; 
         }
 
-        a,
-        a:link{
-            text-decoration: none;
-            padding: 8px 16px;
-            border: solid #506e6a 1px;
+        .principal p { 
+            color: #754059; 
         }
 
-        li{
-            float: left;
+       /* Áreas de interesse */
+
+       .interesses { 
+            padding: 30px; 
+            text-align: center; 
         }
 
-        a:hover{ 
-            background-color: #506e6a;
-            color: white;
-        }  /* menu com o cursor em cima de branco fica verde*/
+        .interesses h2 { 
+            color: #754059; 
+        }
 
+        .interesses-lista { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 10px;  
+        }
+
+        .interesses-lista span { 
+            background-color: #f1e5eb; 
+            color: #754059; 
+            padding: 10px 15px; 
+            border-radius: 20px; 
+        }
+        
+        /* Seção de destaque */
+
+        .destaque { 
+            text-align: center; 
+            padding: 30px; 
+        }
+
+        .destaque h2 { 
+            color: #754059; 
+        }
+
+        .destaque p { 
+            color: #754059; 
+        }
+
+        .botoes-navegacao { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+
+        
+        .botao { 
+            display: inline-block; 
+            background-color: #754059; 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+        }
+        
+        .botao:hover { 
+            background-color: #5c3044; 
+        }
+        
+        /* Rodapé da página */
+
+        footer { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            background-color: #754059; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        footer p {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        
+        /* Figuras*/
+        .card{
+            display: flex;
+            flex-flow: row wrap; /*exibe em colunas e gera uma quebra de linha*/
+        }
+
+        .img{
+            border: 1px solid #754059;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .img img{
+            width: 125px;
+            height: 115 px;
+        }
+        
+        /* Tema escuro */
+
+        body.tema-escuro { 
+            background-color: #222; 
+            color: white; 
+        }
+
+        body.tema-escuro .menu { 
+            background-color: #333; 
+        }
+        
+        body.tema-escuro .menu a { 
+            color: white; 
+            border-color: white; 
+        }
+
+        body.tema-escuro .menu a:hover, body.tema-escuro .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        body.tema-escuro .interesses-lista span { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        body.tema-escuro .principal h1, body.tema-escuro .infos h1, body.tema-escuro .infos p, body.tema-escuro .texto-destaque, body.tema-escuro .destaque p,body.tema-escuro .interesses h2, body.tema-escuro .destaque h2, body.tema-escuro .principal p { 
+            color: #e2a9c1; 
+        }
+
+       
         /* media query para dispositivos móveis */
 
         @media only screen and (max-width: 767px) {
+            
+            /* No modo mobile, o layout muda para uma única coluna, com a imagem e o texto empilhados verticalmente. */
+            
             .wrapper{
                 grid-column-start: 1;
-                grid-column-end: 1;
+                grid-column-end: 3;
             }
 
-            .imagem_leonardo{
+            .imagem_Cristiane{
                 grid-column-start: 1;
-                grid-column-end: 1;
+                grid-column-end: 3;
             }
 
             .principal{
                 grid-column-start: 1;
-                grid-column-end: 1;
+                grid-column-end: 3;
+            }
+
+            .menu{
+                flex-wrap: wrap;
+            }
+            
+
+            .menu ul { 
+                display: flex; 
+                flex-direction: column; 
+                width: 100%; 
+                align-items: center; 
+            }
+
+            .menu li { 
+                float: none; 
+                margin-bottom: 5px; 
+            }
+
+            .menu a { 
+                width: 150px; 
+                text-align: center; 
+            }
+            
+            .imagem_Cristiane img { 
+                width: 200px; 
+                height: 200px; 
             }
         }
 
@@ -91,7 +338,7 @@
 </head>
 <body>
     <header class="container">
-        <h1 style="color: white; text-align: center;" >Curiosidades Leonardo da Vinci 
+        <h1 style="color: white; text-align: center;" >Portfólio Cristiane Santos da Cunha
         </h1>
         <br>
 
@@ -100,41 +347,96 @@
 
     <nav class="container menu">
         <ul>
-            <li><a href="index.html">Biografia</a></li>
-            <li><a href="obras.html">Obras</a></li>
-            <li><a href="curiosidades.html">Curiosidades</a></li>
+            <li><a href="index.html" class="ativo">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
         </ul>
 
+        <!-- Botão para alterar entre tema claro e escuro. A funionalidade será implementada no JavaScript. -->
+
+        <button class="botao-tema" id="botao-tema" aria-label="Alternar entre tema claro e escuro"> 🌙 </button>
+        
     </nav>
 
     <div class="container wrapper">
-        <aside class="imagem_leonardo">
-            <img src="leonardo-da-vinci.png">
+        <aside class="imagem_Cristiane">
+            <img src="cristiane.jpg">
             <div class="infos">
-                <p><strong>Ocupação</strong>Pintor Italiano</p>
-                <p><strong>Data de Nascimento</strong>15/04/1452</p>
-                <p><strong>Data da Morte</strong>02/05/1519 (aos 67 anos)</p>
-            </div>
 
+                <!-- Pequeno texto de apresentação -->
+                <p class="texto-destaque"> Olá, eu sou a Cristiane Santos da Cunha</p>
+                
+                <p> Sou estudante de Engenharia de Software e venho desenvolvendo minha trajetória na área de tecnologia, com interesse em Análise de Dados, Python, SQL e Machine Learning. </p>
+            </div>
+                
         </aside>
         <section class="principal">
-            <h1>Curiosidades</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id impedit possimus consequatur iste similique architecto veritatis tenetur nobis adipisci eum beatae assumenda quia, voluptates magni numquam odit quo doloremque libero? Ex assumenda necessitatibus rerum omnis repellat error eius aliquam obcaecati consequatur, eaque exercitationem cupiditate dolorum accusamus sit. Amet odit impedit non quos assumenda voluptatem suscipit explicabo, dolore cupiditate praesentium odio iste vel nemo, iusto ducimus provident. Ut ex odio obcaecati modi, sequi non error aperiam, quas quibusdam repellat aliquam earum cumque est. Quidem, consectetur odit, aspernatur a quae voluptatum laborum velit tenetur iusto itaque ipsum doloribus omnis cupiditate non repudiandae, at excepturi fuga suscipit officia. Facilis, in repellendus ullam expedita fugiat, quia fugit illo dolorum dolore non molestias nobis labore incidunt, doloremque ut sunt nostrum numquam! Nam illum autem enim! Optio laborum, tempora quis quo quas quam corrupti delectus voluptatum. Totam dolores dolor velit in fugit perferendis quasi unde quam!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique quis aliquam iure atque minus aut quasi et assumenda, quia illo recusandae eos soluta laudantium aliquid. Consequuntur obcaecati dolorum fugiat dignissimos! Accusamus qui ex error at eligendi, quos dignissimos eum deserunt maxime fuga, doloremque necessitatibus aut. Facilis unde nisi neque rerum iste nulla asperiores doloribus earum voluptatibus esse suscipit iusto minus consequuntur accusantium rem inventore explicabo, reiciendis quis magnam dolores velit, commodi sit aspernatur. Accusantium, esse. Voluptatibus, necessitatibus a ea quod in iusto! Quis doloremque reiciendis dolores aliquam ducimus, incidunt inventore dolorem laborum asperiores nihil quo, assumenda sit laudantium! Beatae autem natus ipsam explicabo praesentium rerum nulla provident assumenda, ad eum iste unde cumque exercitationem doloribus maiores. Quisquam quod quia deserunt incidunt? Eius natus deserunt fugiat similique et quas nesciunt! Eveniet suscipit voluptatibus, commodi molestias accusamus, repellendus rerum veritatis qui obcaecati animi soluta aspernatur numquam eaque cupiditate placeat sunt labore aut!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio corporis animi voluptas est facere distinctio accusantium, doloremque perferendis neque reprehenderit fugit assumenda eum molestias repellendus nesciunt ipsam ea deleniti velit, numquam id aliquid alias. Repudiandae dignissimos soluta doloribus reprehenderit voluptatem, nemo autem eveniet minima sint. Eum maxime tempore pariatur, mollitia distinctio reprehenderit repellendus amet possimus, voluptates voluptate assumenda corporis ex ad aut at sed soluta rerum officiis quo eveniet nobis architecto cum molestiae labore. Nam animi qui quibusdam aut eveniet error blanditiis molestiae rerum eligendi quod autem dolor, itaque a quidem rem, aperiam ratione nulla exercitationem quas. Nisi corporis quidem esse, eligendi consectetur nostrum accusamus ducimus voluptatum magni sunt quo atque laboriosam ratione reprehenderit pariatur. At, asperiores. Enim quaerat, molestiae veniam, ab reprehenderit eius et facilis sit dolorem ipsa sapiente voluptatum dolor accusamus assumenda reiciendis libero error magni. Ipsam velit sit tenetur, facere similique eligendi corrupti tempore odit beatae ea!</p>
+            <h1>Sobre mim</h1>
+
+            <p> Sou formada em Engenharia de Bioprocessos e Biotecnologia e atualmente estou ampliando minha formação na área de tecnologia, cursando Engenharia de Software. </p> 
+
+            <p> Minha trajetória acadêmica despertou meu interesse pela tecnologia e pela utilização de dados como ferramenta para compreender problemas e desenvolver soluções. </p> 
+            
+            <p> Atualmente estou  construindo minha transição para a área de Dados, desenvolvendo conhecimentos em programação, análise de dados, bancos de dados e Machine Learning. </p> 
+            
+            <p> Durante meus estudos, venho trabalhando com Python, Pandas, Matplotlib, SQL, Git e GitHub, além de desenvolver projetos utilizando técnicas de Machine Learning. </p> 
+            
+            <p> Este portfólio representa parte dessa jornada de aprendizado e reúne projetos, conhecimentos e experiências que venho construindo na área de tecnologia. </p>
 
         </section>
 
     </div>
+    <!-- Área de interesses -->
+    <div class="interesses">
+        <h2> Áreas de interesse </h2>
+        <div class="interesses-lista">
+            <span> 📊 Análise de Dados </span>
+            <span> 🤖 Machine Learning </span>
+            <span> 🐍 Python </span>
+            <span> 🗄️ Banco de Dados </span>
+            <span> 💻 Tecnologia </span>
+            <span> 🌱 Sustentabilidade </span>
+        </div>
 
+    </div>
+
+    <section class="destaque">
+        <div class="container">
+            <h2> Vamos nos conectar </h2>
+            <p> Segue meu linkedin e meu Github para mantermos contato </p>
+            <div class="botoes-navegacao">
+                <a href="https://www.linkedin.com/in/engcristianecunha/" class="botao"> Linkedin </a>
+                <a href="https://github.com/engcriscunha" class="botao"> GitHub </a>
+                
+            </div>
+        </div>
+    </section>
+
+    
     <footer class="container">
-        <h1>Desenvolvido para fins educacionais</h1>
+        <p>© 2026 Desenvolvido por Cristiane Santos da Cunha</p>
     </footer>
 
-</body>
-</html>
-</head>
-<body>
-    
+    <!-- Script para alternar entre tema claro e escuro -->
+    <script>
+        const botaoTema = document.getElementById('botao-tema');
+        const body = document.body;
+
+        botaoTema.addEventListener('click', function () {
+            body.classList.toggle('tema-escuro');
+
+
+        if (body.classList.contains('tema-escuro')) {
+            botaoTema.textContent = '☀️'; 
+        // Ícone do sol para tema escuro
+        } else {
+            botaoTema.textContent = '🌙'; 
+        // Ícone da lua para tema claro
+        }});
+
+    </script>
+
+        
 </body>
 </html>
