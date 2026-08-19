@@ -93,6 +93,7 @@
             padding: 8px; 
         }
 
+
         /* Área principal da página */
 
         .wrapper { 
@@ -159,6 +160,32 @@
             color: #754059; 
         }
 
+        .principal a, .principal a:link{
+            display: block; 
+            text-decoration: underline;; 
+            color: #754059; 
+            padding: 8px 16px; 
+            margin-right: 5px; 
+            border-radius: 4px; 
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Efeito de hover nos links do menu */
+
+        .principal a:hover { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Página atual */
+
+        .principal a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
        /* Áreas de interesse */
 
        .interesses { 
@@ -240,13 +267,18 @@
         .card{
             display: flex;
             flex-flow: row wrap; /*exibe em colunas e gera uma quebra de linha*/
+            color: #754059;
+        }
+
+        .card p{
+            font-weight: bold;
         }
 
         .img{
             border: 1px solid #754059;
             border-radius: 1rem;
             padding: 0.8rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 2 rem;
         }
 
         .img img{
@@ -284,7 +316,15 @@
             color: #e2a9c1; 
         }
 
-       
+        /* Figuras*/
+        body.tema-escuro .card, body.tema-escuro .card p{
+            color: #e2a9c1;
+        }
+
+        body.tema-escuro  .principal a, .principal a:link{
+            color: #e2a9c1;
+        }
+               
         /* media query para dispositivos móveis */
 
         @media only screen and (max-width: 767px) {
@@ -377,17 +417,26 @@
                 
         </aside>
         <section class="principal">
-            <h1>Portfólio</h1>
+            <h1>Portfólio - Projetos</h1>
+            
 
-            <h1>Projetos</h1>
+
+
             <div class="card">
                 <div class="img">
-                    <img src="mona-lisa.png">
+                    
                     <div class="">
-                        <h2>
-                            Monalisa
-                        </h2>
-                        <p>Museu onde está o quadro</p>
+                        <a href="https://github.com/engcriscunha/voughtguard-pipeline-fraud-detection"> voughtguard-pipeline-fraud-detection </a> 
+                        
+                        <p>Pipeline de fraude financeira </p>
+                    </div>
+                </div>
+                
+
+                
+
+
+           
 
             <p> Sou formada em Engenharia de Bioprocessos e Biotecnologia e atualmente estou ampliando minha formação na área de tecnologia, cursando Engenharia de Software. </p> 
 
