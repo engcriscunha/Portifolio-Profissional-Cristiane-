@@ -280,14 +280,17 @@
             border-radius: 1rem;
             padding: 0.8rem;
             margin-bottom: 2 rem;
-            width: 600px;
-            height: 150px;
+            width: 100%;
+    
+            /* Impede que o card fique maior que a tela */
+            max-width: 600px;
+            min-height: 150px;
             box-sizing: border-box;
         }
 
         .img img{
             width: 125px;
-            height: 115 px;
+            height: 115px;
         }
         
         /* Tema escuro */
@@ -380,6 +383,31 @@
              .img{
                 max-width: 128rem;
                 margin: 1rem;
+            }
+
+            /* Cards */
+            .card {
+            display: block;
+            width: 100%;
+            }
+
+            /* Caixa de cada projeto */
+            .img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            min-height: 150px;
+            margin-bottom: 20px;
+            padding: 15px;
+            }
+
+            /* Links dos projetos */
+            .principal a,
+            .principal a:link {
+            font-size: 16px;
+            padding: 8px;
+            text-align: left;
+            overflow-wrap: anywhere;
             }
         }
 
