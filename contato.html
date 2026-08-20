@@ -523,6 +523,13 @@
                 max-width: 128rem;
                 margin: 1rem;
             }
+
+            /* Formulário ocupa melhor o espaço */
+
+            .formulario {
+                width: 90%;
+                padding: 10px;
+            }
         }
 
     </style>
@@ -540,8 +547,8 @@
         <ul>
             <li><a href="index.html" >Sobre mim</a></li>
             <li><a href="formacao.html">Formação</a></li>
-            <li><a href="portfolio.html" class="ativo">Portfólio</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="portfolio.html" >Portfólio</a></li>
+            <li><a href="contato.html" class="ativo">Contato</a></li>
         </ul>
 
         <!-- Botão para alterar entre tema claro e escuro. A funionalidade será implementada no JavaScript. -->
@@ -563,58 +570,89 @@
                 
         </aside>
         <section class="principal">
-            <h1>Portfólio - Projetos</h1>
-            
-            <div class="card">
-                <div class="img">
-                    
-                    <div class="">
-                        <a href="https://github.com/engcriscunha/voughtguard-pipeline-fraud-detection"> VoughtGuard - Pipeline de Detecção de Fraude Financeira </a> 
+            <h1>Contato</h1>
                         
-                        <p> Pipeline de dados para processar transações financeiras, aplicar limpeza e validação de qualidade, gerar tabelas analíticas para o time de risco e produzir um relatório automatizado de Data Quality. Trilha Starlight Git Project </p>
-                    </div>
-            </div>
-                
-            <div class="card">
-                <div class="img">
-                    
-                    <div class="">
-                        <a href="https://github.com/engcriscunha/avanti-bean-leaf-classification"> Projeto de Classificação de Folhas de Feijão </a> 
-                        
-                        <p> Projeto de Visão Computacional para classificação de lesões em folhas de feijão, desenvolvido para o curso de Machine Learning no bootcamp Atlântico Avanti. </p>
-                    </div>
-            </div>
-                
-            <div class="card">
-                <div class="img">
-                    
-                    <div class="">
-                        <a href="https://github.com/engcriscunha/Curso-an-lise-de-dados---PrograMaria"> Análise de Dados - PrograMaria </a> 
-                        
-                        <p> Curso de análise de dados com python, noções de confecção de daschboard com Looker e noções de Machine Learning. </p>
-                    </div>
-            </div>
- 
-            <div class="card">
-                <div class="img">
-                    
-                    <div class="">
-                        <a href="https://github.com/engcriscunha/neopix-dataops-pipeline"> NeoPix - Monitoramento e Operação de Pipelines de Pagamento </a> 
-                        
-                        <p> Desafio técnico inspirado em vaga real de Engenheiro(a) de Dados Júnior - DataOps. Trilha Starlight Git Project.</p>
-                    </div>
-            </div>
+            <p>Preencha o formulário abaixo para entrar em contato comigo.
+            </p>
 
+            <!-- Formulário de contato - O JavaScript fará a validação dos campos antes de simular o envio. -->
 
-            <div class="card">
-                <div class="img">
-                    
-                    <div class="">
-                        <a href="https://github.com/engcriscunha/bootcamp_uninter_time5"> Bootcamp Uninter - do zero ao produto</a> 
-                        
-                        <p> Bootcamp de desenvolvimento do MedAlerta, uma aplicação de linha de comando (CLI) desenvolvida em Java com Spring Boot, cujo objetivo é auxiliar usuários no controle e regularidade do uso de medicamentos. </p>
-                    </div>
-            </div>
+            <form
+                class="formulario"
+                id="formularioContato">
+
+                <!-- Campo Nome -->
+                <label for="nome">
+                    Nome:
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome">
+
+                <!-- Campo E-mail -->
+
+                <label for="email">
+                    E-mail:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail">
+
+                <!-- Campo Mensagem -->
+
+                <label for="mensagem">
+                    Mensagem:
+                </label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    placeholder="Digite sua mensagem"></textarea>
+
+                <!-- Botão de envio -->
+
+                <button
+                    type="submit"
+                    class="botao-enviar">
+                    Enviar mensagem
+                </button>
+
+            </form>
+
+        <!--Caixa de mensagem / Modal -->
+    <!-- Esta caixa fica escondida inicialmente.
+        O JavaScript irá exibi-la quando:
+        1. houver algum erro no formulário;
+        2. o formulário for preenchido corretamente. -->
+
+    <div
+        class="modal"
+        id="modalMensagem">
+
+        <div class="modal-conteudo">
+            <!-- Título da mensagem -->
+            <h2 id="tituloModal"></h2>
+
+            <!-- Texto da mensagem -->
+            <p id="textoModal"></p>
+
+            <!-- Botão para fechar a caixa -->
+
+            <button
+                type="button"
+                class="botao-fechar"
+                id="botaoFechar">
+                Fechar
+            </button>
+        </div>
+    </div>
+
 
         </section>
 
