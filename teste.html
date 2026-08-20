@@ -4,23 +4,30 @@
 <head>
     <meta charset="UTF-8">
 
+    <!-- Permite que o site se adapte a celulares e tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portfólio Cristiane Santos da Cunha</title>
 
-    <!-- CONFIGURAÇÃO CSS -->
+
+    <!-- =====================================================
+         CONFIGURAÇÃO CSS
+         ===================================================== -->
+
     <style>
 
-        /* Configurações gerais */
+        /* =====================================================
+           CONFIGURAÇÕES GERAIS
+           ===================================================== */
 
-        body { 
-            margin: 0; 
-            font-family: Arial, Helvetica, sans-serif; 
-            background-color: white; 
-            color: #333; 
-            
-            /* Transição suave para o tema escuro */
-            transition: background-color 0.3s, color 0.3s; 
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            color: #333;
+
+            /* Transição suave entre os temas claro e escuro */
+            transition: background-color 0.3s, color 0.3s;
         }
 
 
@@ -31,135 +38,252 @@
         }
 
 
-        /* Cabeçalho da página */
+        /* =====================================================
+           CABEÇALHO
+           ===================================================== */
 
-        header { 
-            grid-column-start: 1; 
-            grid-column-end: 12; 
-            background-color: #754059; 
-            color: white; 
-            padding: 20px; 
+        header {
+            grid-column-start: 1;
+            grid-column-end: 12;
+
+            background-color: #754059;
+            color: white;
+
+            padding: 20px;
         }
 
 
-        /* Menu de navegação */
+        /* =====================================================
+           MENU DE NAVEGAÇÃO
+           ===================================================== */
 
-        .menu { 
-            grid-column-start: 1; 
-            grid-column-end: 12; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: 20px; 
-            padding: 15px; 
-            background-color: white; 
+        .menu {
+            grid-column-start: 1;
+            grid-column-end: 12;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 15px;
+
+            background-color: white;
         }
-    
-        .menu ul { 
-            list-style-type: none; 
-            margin: 0; 
-            padding: 0; 
+
+
+        .menu ul {
+            list-style-type: none;
+
+            margin: 0;
+            padding: 0;
         }
-        
-        .menu li { 
-            float: left; 
+
+
+        .menu li {
+            float: left;
         }
 
 
         /* Estilo dos links do menu */
 
-        .menu a, 
-        .menu a:link { 
-            display: block; 
-            text-decoration: none; 
-            color: #754059; 
-            padding: 8px 16px; 
-            border: solid #754059 1px; 
-            margin-right: 5px; 
-            border-radius: 4px; 
-        }
-        
+        .menu a,
+        .menu a:link {
 
-        /* Efeito de hover nos links do menu */
+            display: block;
 
-        .menu a:hover { 
-            background-color: #754059; 
-            color: white; 
+            text-decoration: none;
+
+            color: #754059;
+
+            padding: 8px 16px;
+
+            border: solid #754059 1px;
+
+            margin-right: 5px;
+
+            border-radius: 4px;
         }
-        
+
+
+        /* Efeito quando o mouse passa sobre o link */
+
+        .menu a:hover {
+
+            background-color: #754059;
+
+            color: white;
+        }
+
 
         /* Página atual */
 
-        .menu a.ativo { 
-            background-color: #754059; 
-            color: white; 
-        }
-        
+        .menu a.ativo {
 
-        /* Botão tema */
+            background-color: #754059;
 
-        .botao-tema { 
-            border: none; 
-            background-color: transparent; 
-            font-size: 22px; 
-            cursor: pointer; 
-            padding: 8px; 
+            color: white;
         }
 
 
-        /* ==============================
+        /* =====================================================
+           BOTÃO DO TEMA
+           ===================================================== */
+
+        .botao-tema {
+
+            border: none;
+
+            background-color: transparent;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            padding: 8px;
+        }
+
+
+        /* =====================================================
            ÁREA PRINCIPAL
-        ============================== */
+           ===================================================== */
 
-        .principal { 
-            grid-column-start: 1; 
-            grid-column-end: 12; 
-            padding: 30px 5%; 
-            text-align: justify; 
+        .wrapper {
+
+            grid-column-start: 1;
+            grid-column-end: 12;
+
+            display: grid;
+
+            /* Divide o conteúdo em duas colunas */
+            grid-template-columns: 30% 70%;
+
+            align-items: center;
+
+            padding: 30px 5%;
         }
 
-        .principal h1 { 
-            color: #754059; 
-            text-align: center;
+
+        /* =====================================================
+           IMAGEM DO PERFIL
+           ===================================================== */
+
+        .imagem_Cristiane img {
+
+            width: 250px;
+            height: 250px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #754059;
         }
 
-        .principal p { 
-            color: #754059; 
+
+        /* Informações do perfil */
+
+        .infos {
+
+            padding: 10px;
         }
 
 
-        /* ==============================
+        .texto-destaque {
+
+            color: #754059;
+
+            font-weight: bold;
+        }
+
+
+        .infos h1 {
+
+            color: #754059;
+
+            text-align: justify;
+
+            font-size: 18px;
+        }
+
+
+        .infos p {
+
+            color: #754059;
+
+            text-align: justify;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           CONTEÚDO PRINCIPAL
+           ===================================================== */
+
+        .principal {
+
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            padding-left: 15px;
+            padding-right: 15px;
+
+            text-align: justify;
+        }
+
+
+        .principal h1 {
+
+            color: #754059;
+        }
+
+
+        .principal p {
+
+            color: #754059;
+        }
+
+
+        /* =====================================================
            FORMULÁRIO DE CONTATO
-        ============================== */
+           ===================================================== */
 
-        .formulario-contato {
-            width: 80%;
-            max-width: 650px;
+        .formulario {
+
+            max-width: 600px;
+
             margin: 30px auto;
 
-            display: flex;
-            flex-direction: column;
-
-            gap: 10px;
+            padding: 20px;
         }
 
 
-        /* Nome dos campos */
+        /* Texto dos campos */
 
-        .formulario-contato label {
+        .formulario label {
+
+            display: block;
+
+            margin-top: 15px;
+
+            margin-bottom: 5px;
+
             color: #754059;
+
             font-weight: bold;
-            margin-top: 10px;
         }
 
 
-        /* Campos do formulário */
+        /* Campos de texto */
 
-        .formulario-contato input,
-        .formulario-contato textarea {
+        .formulario input,
+        .formulario textarea {
+
             width: 100%;
 
-            padding: 12px;
+            padding: 10px;
 
             border: 1px solid #754059;
 
@@ -173,33 +297,21 @@
         }
 
 
-        /* Campo da mensagem */
+        /* Área da mensagem */
 
-        .formulario-contato textarea {
+        .formulario textarea {
+
             height: 150px;
 
             resize: vertical;
         }
 
 
-        /* Efeito ao clicar nos campos */
-
-        .formulario-contato input:focus,
-        .formulario-contato textarea:focus {
-            outline: none;
-
-            border: 2px solid #754059;
-        }
-
-
-        /* ==============================
-           BOTÃO ENVIAR
-        ============================== */
+        /* Botão de enviar */
 
         .botao-enviar {
-            margin-top: 15px;
 
-            padding: 12px 20px;
+            margin-top: 20px;
 
             background-color: #754059;
 
@@ -207,128 +319,306 @@
 
             border: none;
 
+            padding: 12px 25px;
+
             border-radius: 5px;
 
-            font-size: 16px;
-
-            font-weight: bold;
-
             cursor: pointer;
+
+            font-size: 16px;
         }
 
 
-        /* Efeito quando o mouse passa sobre o botão */
+        /* Efeito do botão */
 
         .botao-enviar:hover {
+
             background-color: #5c3044;
         }
 
 
-        /* ==============================
-           RESPOSTA DO FORMULÁRIO
-        ============================== */
+        /* =====================================================
+           CAIXA DE MENSAGEM
+           ===================================================== */
 
-        #resposta-formulario {
+        .modal {
+
+            /* A caixa fica escondida inicialmente */
             display: none;
 
-            width: 80%;
-            max-width: 650px;
+            /* Permite colocar a caixa sobre todo o conteúdo */
+            position: fixed;
 
-            margin: 20px auto;
+            z-index: 1000;
 
-            padding: 15px;
+            left: 0;
+            top: 0;
 
-            border-radius: 5px;
+            width: 100%;
+            height: 100%;
 
-            font-weight: bold;
+            /* Fundo escuro transparente */
+            background-color: rgba(0, 0, 0, 0.5);
+
+            /* Centraliza a caixa */
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* Conteúdo da caixa */
+
+        .modal-conteudo {
+
+            background-color: white;
+
+            color: #754059;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            width: 90%;
+
+            max-width: 450px;
 
             text-align: center;
 
-            box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
 
-        /* Mensagem de sucesso */
+        /* Título da caixa */
 
-        #resposta-formulario.sucesso {
-            display: block;
+        .modal-conteudo h2 {
 
-            background-color: #e5f5e5;
-
-            color: #286628;
-
-            border: 1px solid #286628;
+            color: #754059;
         }
 
 
-        /* Mensagem de erro */
+        /* Botão para fechar a caixa */
 
-        #resposta-formulario.erro {
-            display: block;
+        .botao-fechar {
 
-            background-color: #f8e5e5;
+            background-color: #754059;
 
-            color: #9b2226;
+            color: white;
 
-            border: 1px solid #9b2226;
+            border: none;
+
+            padding: 10px 25px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            margin-top: 15px;
         }
 
 
-        /* ==============================
+        /* Efeito do botão fechar */
+
+        .botao-fechar:hover {
+
+            background-color: #5c3044;
+        }
+
+
+        /* =====================================================
+           ÁREAS DE INTERESSE
+           ===================================================== */
+
+        .interesses {
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .interesses h2 {
+
+            color: #754059;
+        }
+
+
+        .interesses-lista {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+
+        .interesses-lista span {
+
+            background-color: #f1e5eb;
+
+            color: #754059;
+
+            padding: 10px 15px;
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           SEÇÃO DE DESTAQUE
+           ===================================================== */
+
+        .destaque {
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        .destaque h2 {
+
+            color: #754059;
+        }
+
+
+        .destaque p {
+
+            color: #754059;
+        }
+
+
+        .botoes-navegacao {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .botao {
+
+            display: inline-block;
+
+            background-color: #754059;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 20px;
+
+            border-radius: 5px;
+        }
+
+
+        .botao:hover {
+
+            background-color: #5c3044;
+        }
+
+
+        /* =====================================================
            RODAPÉ
-        ============================== */
+           ===================================================== */
 
-        footer { 
-            grid-column-start: 1; 
-            grid-column-end: 12; 
-            background-color: #754059; 
-            color: white; 
-            text-align: center; 
-            padding: 20px; 
+        footer {
+
+            grid-column-start: 1;
+            grid-column-end: 12;
+
+            background-color: #754059;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
         }
+
 
         footer p {
+
             font-size: 15px;
+
             font-weight: bold;
         }
 
 
-        /* ==============================
+        /* =====================================================
            TEMA ESCURO
-        ============================== */
+           ===================================================== */
 
-        body.tema-escuro { 
-            background-color: #222; 
-            color: white; 
+        body.tema-escuro {
+
+            background-color: #222;
+
+            color: white;
         }
 
-        body.tema-escuro .menu { 
-            background-color: #333; 
-        }
-        
-        body.tema-escuro .menu a { 
-            color: white; 
-            border-color: white; 
+
+        body.tema-escuro .menu {
+
+            background-color: #333;
         }
 
-        body.tema-escuro .menu a:hover, 
-        body.tema-escuro .menu a.ativo { 
-            background-color: #754059; 
-            color: white; 
+
+        body.tema-escuro .menu a {
+
+            color: white;
+
+            border-color: white;
+        }
+
+
+        body.tema-escuro .menu a:hover,
+        body.tema-escuro .menu a.ativo {
+
+            background-color: #754059;
+
+            color: white;
+        }
+
+
+        body.tema-escuro .interesses-lista span {
+
+            background-color: #754059;
+
+            color: white;
+        }
+
+
+        /* Altera a cor dos textos no tema escuro */
+
+        body.tema-escuro .principal h1,
+        body.tema-escuro .principal p,
+        body.tema-escuro .infos h1,
+        body.tema-escuro .infos p,
+        body.tema-escuro .texto-destaque,
+        body.tema-escuro .destaque p,
+        body.tema-escuro .interesses h2 {
+
+            color: #e2a9c1;
         }
 
 
         /* Formulário no tema escuro */
 
-        body.tema-escuro .principal h1,
-        body.tema-escuro .principal p,
-        body.tema-escuro .formulario-contato label { 
-            color: #e2a9c1; 
+        body.tema-escuro .formulario label {
+
+            color: #e2a9c1;
         }
 
 
-        body.tema-escuro .formulario-contato input,
-        body.tema-escuro .formulario-contato textarea {
+        body.tema-escuro .formulario input,
+        body.tema-escuro .formulario textarea {
+
             background-color: #333;
 
             color: white;
@@ -337,75 +627,137 @@
         }
 
 
-        /* ==============================
-           MEDIA QUERY PARA DISPOSITIVOS MÓVEIS
-        ============================== */
+        /* Modal no tema escuro */
+
+        body.tema-escuro .modal-conteudo {
+
+            background-color: #333;
+
+            color: white;
+        }
+
+
+        body.tema-escuro .modal-conteudo h2 {
+
+            color: #e2a9c1;
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE - DISPOSITIVOS MÓVEIS
+           ===================================================== */
 
         @media only screen and (max-width: 767px) {
 
-            .menu {
-                flex-wrap: wrap;
-            }
-            
+            /* O conteúdo passa para uma única coluna */
 
-            .menu ul { 
-                display: flex; 
-                flex-direction: column; 
-                width: 100%; 
-                align-items: center; 
+            .wrapper {
+
+                grid-column-start: 1;
+
+                grid-column-end: 3;
             }
 
-            .menu li { 
-                float: none; 
-                margin-bottom: 5px; 
-            }
 
-            .menu a { 
-                width: 150px; 
-                text-align: center; 
+            .imagem_Cristiane {
+
+                grid-column-start: 1;
+
+                grid-column-end: 3;
             }
 
 
             .principal {
-                padding: 20px 5%;
+
+                grid-column-start: 1;
+
+                grid-column-end: 3;
             }
 
 
-            .formulario-contato {
-                width: 95%;
+            /* Menu pode quebrar linha */
+
+            .menu {
+
+                flex-wrap: wrap;
             }
 
 
-            #resposta-formulario {
-                width: 95%;
+            .menu ul {
+
+                display: flex;
+
+                flex-direction: column;
+
+                width: 100%;
+
+                align-items: center;
+            }
+
+
+            .menu li {
+
+                float: none;
+
+                margin-bottom: 5px;
+            }
+
+
+            .menu a {
+
+                width: 150px;
+
+                text-align: center;
+            }
+
+
+            /* Diminui a imagem no celular */
+
+            .imagem_Cristiane img {
+
+                width: 200px;
+
+                height: 200px;
+            }
+
+
+            /* Formulário ocupa melhor o espaço */
+
+            .formulario {
+
+                width: 90%;
+
+                padding: 10px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- ==============================
+
+    <!-- =====================================================
          CABEÇALHO
-    ============================== -->
+         ===================================================== -->
 
     <header class="container">
 
         <h1 style="color: white; text-align: center;">
-            Portfólio Cristiane Santos da Cunha
-        </h1>
 
-        <br>
+            Portfólio Cristiane Santos da Cunha
+
+        </h1>
 
     </header>
 
 
-    <!-- ==============================
+    <!-- =====================================================
          MENU DE NAVEGAÇÃO
-    ============================== -->
+         ===================================================== -->
 
     <nav class="container menu">
 
@@ -417,17 +769,22 @@
                 </a>
             </li>
 
+
             <li>
                 <a href="formacao.html">
                     Formação
                 </a>
             </li>
 
+
             <li>
                 <a href="portfolio.html">
                     Portfólio
                 </a>
             </li>
+
+
+            <!-- Página atual -->
 
             <li>
                 <a href="contato.html" class="ativo">
@@ -438,235 +795,565 @@
         </ul>
 
 
-        <!-- Botão para alterar entre tema claro e escuro -->
+        <!-- Botão para alternar entre tema claro e escuro -->
 
-        <button 
-            class="botao-tema" 
-            id="botao-tema" 
+        <button
+            class="botao-tema"
+            id="botao-tema"
             aria-label="Alternar entre tema claro e escuro">
 
             🌙
 
         </button>
-        
+
     </nav>
 
 
-    <!-- ==============================
-         CONTEÚDO PRINCIPAL
-    ============================== -->
+    <!-- =====================================================
+         ÁREA PRINCIPAL
+         ===================================================== -->
 
-    <main class="principal">
-
-        <h1>Entre em contato</h1>
-
-        <p style="text-align: center;">
-            Preencha o formulário abaixo para entrar em contato comigo.
-        </p>
+    <div class="container wrapper">
 
 
-        <!-- Formulário de contato -->
+        <!-- =================================================
+             LADO ESQUERDO - FOTO E APRESENTAÇÃO
+             ================================================= -->
 
-        <form id="formulario-contato" class="formulario-contato">
+        <aside class="imagem_Cristiane">
 
-
-            <!-- Campo Nome -->
-
-            <label for="nome">
-                Nome:
-            </label>
-
-            <input 
-                type="text" 
-                id="nome" 
-                name="nome"
-                placeholder="Digite seu nome">
+            <img
+                src="cristiane.jpg"
+                alt="Foto de Cristiane Santos da Cunha">
 
 
-            <!-- Campo E-mail -->
+            <div class="infos">
 
-            <label for="email">
-                E-mail:
-            </label>
+                <!-- Pequeno texto de apresentação -->
 
-            <input 
-                type="email" 
-                id="email" 
-                name="email"
-                placeholder="Digite seu e-mail">
+                <p class="texto-destaque">
+
+                    Olá, eu sou a Cristiane Santos da Cunha
+
+                </p>
 
 
-            <!-- Campo Mensagem -->
+                <p>
 
-            <label for="mensagem">
-                Mensagem:
-            </label>
+                    Sou estudante de Engenharia de Software e venho
+                    desenvolvendo minha trajetória na área de tecnologia,
+                    com interesse em Análise de Dados, Python, SQL e
+                    Machine Learning.
 
-            <textarea 
-                id="mensagem" 
-                name="mensagem"
-                placeholder="Digite sua mensagem"></textarea>
+                </p>
+
+            </div>
+
+        </aside>
 
 
-            <!-- Botão de envio -->
+        <!-- =================================================
+             FORMULÁRIO DE CONTATO
+             ================================================= -->
 
-            <button 
-                type="submit" 
-                class="botao-enviar">
+        <section class="principal">
 
-                Enviar mensagem
+            <h1>
+                Entre em contato
+            </h1>
+
+
+            <p>
+
+                Preencha o formulário abaixo para entrar em contato comigo.
+
+            </p>
+
+
+            <!--
+                Formulário de contato.
+
+                O JavaScript fará a validação dos campos
+                antes de simular o envio.
+            -->
+
+            <form
+                class="formulario"
+                id="formularioContato">
+
+
+                <!-- Campo Nome -->
+
+                <label for="nome">
+
+                    Nome:
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome">
+
+
+                <!-- Campo E-mail -->
+
+                <label for="email">
+
+                    E-mail:
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail">
+
+
+                <!-- Campo Mensagem -->
+
+                <label for="mensagem">
+
+                    Mensagem:
+
+                </label>
+
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    placeholder="Digite sua mensagem"></textarea>
+
+
+                <!-- Botão de envio -->
+
+                <button
+                    type="submit"
+                    class="botao-enviar">
+
+                    Enviar mensagem
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAIXA DE MENSAGEM / MODAL
+         ===================================================== -->
+
+    <!--
+        Esta caixa fica escondida inicialmente.
+
+        O JavaScript irá exibi-la quando:
+
+        1. houver algum erro no formulário;
+        2. o formulário for preenchido corretamente.
+    -->
+
+    <div
+        class="modal"
+        id="modalMensagem">
+
+
+        <div class="modal-conteudo">
+
+
+            <!-- Título da mensagem -->
+
+            <h2 id="tituloModal"></h2>
+
+
+            <!-- Texto da mensagem -->
+
+            <p id="textoModal"></p>
+
+
+            <!-- Botão para fechar a caixa -->
+
+            <button
+                type="button"
+                class="botao-fechar"
+                id="botaoFechar">
+
+                Fechar
 
             </button>
 
-        </form>
+        </div>
+
+    </div>
 
 
-        <!--
-            O JavaScript utilizará este espaço
-            para apresentar a resposta ao usuário.
-        -->
+    <!-- =====================================================
+         ÁREAS DE INTERESSE
+         ===================================================== -->
 
-        <div id="resposta-formulario"></div>
+    <div class="interesses">
 
-    </main>
+        <h2>
+            Áreas de interesse
+        </h2>
 
 
-    <!-- ==============================
+        <div class="interesses-lista">
+
+            <span>
+                📊 Análise de Dados
+            </span>
+
+            <span>
+                🤖 Machine Learning
+            </span>
+
+            <span>
+                🐍 Python
+            </span>
+
+            <span>
+                🗄️ Banco de Dados
+            </span>
+
+            <span>
+                💻 Tecnologia
+            </span>
+
+            <span>
+                🌱 Sustentabilidade
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEÇÃO DE CONEXÃO
+         ===================================================== -->
+
+    <section class="destaque">
+
+        <div class="container">
+
+            <h2>
+                Vamos nos conectar
+            </h2>
+
+
+            <p>
+                Siga meu LinkedIn e meu GitHub para mantermos contato.
+            </p>
+
+
+            <div class="botoes-navegacao">
+
+
+                <a
+                    href="https://www.linkedin.com/in/engcristianecunha/"
+                    class="botao"
+                    target="_blank">
+
+                    LinkedIn
+
+                </a>
+
+
+                <a
+                    href="https://github.com/engcriscunha"
+                    class="botao"
+                    target="_blank">
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
          RODAPÉ
-    ============================== -->
+         ===================================================== -->
 
     <footer class="container">
 
         <p>
+
             © 2026 Desenvolvido por Cristiane Santos da Cunha
+
         </p>
 
     </footer>
 
 
-    <!-- ==============================
+    <!-- =====================================================
          JAVASCRIPT
-    ============================== -->
+         ===================================================== -->
+
 
     <script>
 
-        /* ==========================================
-           ALTERAÇÃO ENTRE TEMA CLARO E ESCURO
-        ========================================== */
+        /* =====================================================
+           ALTERAÇÃO DO TEMA
+           ===================================================== */
 
-        const botaoTema = document.getElementById('botao-tema');
+        // Obtém o botão de tema
 
-        const body = document.body;
+        const botaoTema =
+            document.getElementById('botao-tema');
 
+
+        // Obtém o elemento body
+
+        const body =
+            document.body;
+
+
+        // Executa quando o botão é clicado
 
         botaoTema.addEventListener('click', function () {
+
+
+            // Adiciona ou remove a classe tema-escuro
 
             body.classList.toggle('tema-escuro');
 
 
-            if (body.classList.contains('tema-escuro')) {
+            // Verifica qual tema está ativo
+
+            if (
+                body.classList.contains('tema-escuro')
+            ) {
+
+                // Mostra o ícone do sol
 
                 botaoTema.textContent = '☀️';
 
-                // Ícone do sol para tema escuro
+            }
 
-            } else {
+            else {
+
+                // Mostra o ícone da lua
 
                 botaoTema.textContent = '🌙';
-
-                // Ícone da lua para tema claro
 
             }
 
         });
 
 
-        /* ==========================================
-           FORMULÁRIO DE CONTATO
-        ========================================== */
 
-        const formularioContato =
-            document.getElementById('formulario-contato');
-
-        const respostaFormulario =
-            document.getElementById('resposta-formulario');
+        /* =====================================================
+           VALIDAÇÃO DO FORMULÁRIO
+           ===================================================== */
 
 
-        /* Evento executado quando o usuário
-           clicar no botão Enviar mensagem */
+        // Obtém o formulário
 
-        formularioContato.addEventListener('submit', function(event) {
+        const formulario =
+            document.getElementById('formularioContato');
 
-            /* Impede que a página seja recarregada */
+
+        // Obtém os elementos da caixa de mensagem
+
+        const modal =
+            document.getElementById('modalMensagem');
+
+
+        const tituloModal =
+            document.getElementById('tituloModal');
+
+
+        const textoModal =
+            document.getElementById('textoModal');
+
+
+        const botaoFechar =
+            document.getElementById('botaoFechar');
+
+
+
+        // Detecta quando o usuário tenta enviar o formulário
+
+        formulario.addEventListener('submit', function(event) {
+
+
+            /*
+                Impede o comportamento padrão do formulário.
+
+                Normalmente o navegador recarregaria a página.
+                Como a professora pediu uma simulação,
+                vamos tratar o envio com JavaScript.
+            */
 
             event.preventDefault();
 
 
-            /* Captura os valores digitados */
+            // Captura os valores digitados
 
             const nome =
                 document.getElementById('nome').value.trim();
 
+
             const email =
                 document.getElementById('email').value.trim();
+
 
             const mensagem =
                 document.getElementById('mensagem').value.trim();
 
 
-            /* ==========================================
-               VERIFICAÇÃO DOS CAMPOS
-            ========================================== */
 
-            if (nome === '' || email === '' || mensagem === '') {
+            /* =================================================
+               VALIDAÇÃO DOS CAMPOS
+               ================================================= */
 
-                respostaFormulario.className = 'erro';
 
-                respostaFormulario.textContent =
-                    'Por favor, preencha todos os campos antes de enviar a mensagem.';
+            // Verifica se algum campo está vazio
+
+            if (
+                nome === '' ||
+                email === '' ||
+                mensagem === ''
+            ) {
+
+
+                // Define a mensagem de erro
+
+                tituloModal.textContent =
+                    'Atenção!';
+
+
+                textoModal.textContent =
+                    'Por favor, preencha todos os campos do formulário.';
+
+
+                // Exibe a caixa de mensagem
+
+                modal.style.display = 'flex';
+
+
+                // Interrompe a execução
 
                 return;
+
             }
 
 
-            /* ==========================================
-               VERIFICAÇÃO DO E-MAIL
-            ========================================== */
+
+            /* =================================================
+               VALIDAÇÃO DO E-MAIL
+               ================================================= */
+
+
+            /*
+                Expressão regular utilizada para verificar
+                se o e-mail possui um formato básico válido.
+
+                Exemplo:
+
+                usuario@dominio.com
+            */
 
             const formatoEmail =
                 /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-            if (!formatoEmail.test(email)) {
+            // Verifica o formato do e-mail
 
-                respostaFormulario.className = 'erro';
+            if (
+                !formatoEmail.test(email)
+            ) {
 
-                respostaFormulario.textContent =
-                    'Por favor, informe um endereço de e-mail válido.';
+
+                tituloModal.textContent =
+                    'E-mail inválido!';
+
+
+                textoModal.textContent =
+                    'Digite um endereço de e-mail válido. Exemplo: usuario@dominio.com';
+
+
+                // Exibe a caixa de mensagem
+
+                modal.style.display = 'flex';
+
 
                 return;
+
             }
 
 
-            /* ==========================================
-               SIMULAÇÃO DO ENVIO
-            ========================================== */
 
-            respostaFormulario.className = 'sucesso';
-
-            respostaFormulario.textContent =
-                'Mensagem enviada com sucesso! Obrigada pelo contato, '
-                + nome
-                + '.';
+            /* =================================================
+               ENVIO SIMULADO
+               ================================================= */
 
 
-            /* Limpa os campos do formulário */
+            /*
+                Como este trabalho não precisa de um servidor
+                para receber mensagens, o envio será simulado.
 
-            formularioContato.reset();
+                Se todos os dados estiverem corretos,
+                mostramos uma mensagem de sucesso.
+            */
+
+
+            tituloModal.textContent =
+                'Mensagem enviada com sucesso!';
+
+
+            textoModal.textContent =
+                'Obrigada pelo contato, ' +
+                nome +
+                '! Sua mensagem foi recebida.';
+
+
+            // Exibe a caixa de confirmação
+
+            modal.style.display = 'flex';
+
+
+
+            /*
+                Limpa os campos do formulário depois
+                do envio simulado.
+            */
+
+            formulario.reset();
 
         });
 
+
+
+        /* =====================================================
+           BOTÃO FECHAR DA CAIXA
+           ===================================================== */
+
+
+        botaoFechar.addEventListener('click', function() {
+
+
+            // Esconde a caixa de mensagem
+
+            modal.style.display = 'none';
+
+        });
+
+
     </script>
+
 
 </body>
 

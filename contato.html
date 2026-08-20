@@ -93,6 +93,7 @@
             padding: 8px; 
         }
 
+
         /* Área principal da página */
 
         .wrapper { 
@@ -100,7 +101,7 @@
             grid-column-end: 12; 
             display: grid; 
 
-            /* Divide o conteúdo em duas colunas: uma para a imagem e outra para o texto. */ 
+        /* Divide o conteúdo em duas colunas: uma para a imagem e outra para o texto. */ 
             grid-template-columns: 30% 70%;
             align-items: center;
             padding: 30px 5%;
@@ -159,31 +160,57 @@
             color: #754059; 
         }
 
+        .principal a, .principal a:link{
+            display: block; 
+            text-decoration: underline;; 
+            color: #754059; 
+            padding: 8px 16px; 
+            margin-right: 5px; 
+            border-radius: 4px; 
+            font-size: 18px;
+            font-weight: bold;
+            text-align: left;
+        }
+        
+        /* Efeito de hover nos links do menu */
+
+        .principal a:hover { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+        /* Página atual */
+
+        .principal a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+
         /* Formulário de Contato */
 
-        .formulario-contato {
-            width: 80%;
-            max-width: 650px;
+        .formulario {
+            max-width: 600px;
             margin: 30px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            padding: 20px;
         }
 
-        /* Nome dos campos */
+        /* Texto dos campos */
 
-        .formulario-contato label {
+        .formulario label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
             color: #754059;
             font-weight: bold;
-            margin-top: 10px;
         }
 
-        /* Campos do formulário */
 
-        .formulario-contato input,
-        .formulario-contato textarea {
+        /* Campos de texto */
+
+        .formulario input,
+        .formulario textarea {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #754059;
             border-radius: 5px;
             box-sizing: border-box;
@@ -191,90 +218,91 @@
             font-size: 15px;
         }
 
-        /* Campo da mensagem */
+        /* Área da mensagem */
 
-        .formulario-contato textarea {
+        .formulario textarea {
             height: 150px;
             resize: vertical;
         }
 
-        /* Efeito ao clicar nos campos */
-
-        .formulario-contato input:focus,
-        .formulario-contato textarea:focus {
-            outline: none;
-            border: 2px solid #754059;
-        }
-
-        /* Botão enviar */
+        /* Botão de enviar */
 
         .botao-enviar {
-            margin-top: 15px;
-            padding: 12px 20px;
+            margin-top: 20px;
             background-color: #754059;
             color: white;
             border: none;
+            padding: 12px 25px;
             border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
+            font-size: 16px;
         }
 
-        /* Efeito quando o mouse passa sobre o botão */
+        /* Efeito do botão */
 
         .botao-enviar:hover {
             background-color: #5c3044;
         }
 
-        /* Resposta do Formulário */
+        /* Caixa de Mensagem */
 
-        #resposta-formulario {
+        .modal {
+
+            /* A caixa fica escondida inicialmente */
             display: none;
+            /* Permite colocar a caixa sobre todo o conteúdo */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
 
-            width: 80%;
-            max-width: 650px;
+            /* Fundo escuro transparente */
+            background-color: rgba(0, 0, 0, 0.5);
 
-            margin: 20px auto;
+            /* Centraliza a caixa */
+            justify-content: center;
+            align-items: center;
+        }
 
-            padding: 15px;
+        /* Conteúdo da caixa */
 
-            border-radius: 5px;
-
-            font-weight: bold;
-
+        .modal-conteudo {
+            background-color: white;
+            color: #754059;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 450px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
 
-            box-sizing: border-box;
+        /* Título da caixa */
+
+        .modal-conteudo h2 {
+            color: #754059;
+        }
+
+        /* Botão para fechar a caixa */
+
+        .botao-fechar {
+            background-color: #754059;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
         }
 
 
-        /* Mensagem de sucesso */
-
-        #resposta-formulario.sucesso {
-            display: block;
-
-            background-color: #e5f5e5;
-
-            color: #286628;
-
-            border: 1px solid #286628;
+        /* Efeito do botão fechar */
+        .botao-fechar:hover {
+            background-color: #5c3044;
         }
-
-
-        /* Mensagem de erro */
-
-        #resposta-formulario.erro {
-            display: block;
-
-            background-color: #f8e5e5;
-
-            color: #9b2226;
-
-            border: 1px solid #9b2226;
-        }
-
-
-
+        
        /* Áreas de interesse */
 
        .interesses { 
@@ -352,6 +380,32 @@
             font-weight: bold;
         }
         
+        /* Figuras*/
+        .card{
+            display: flex;
+            flex-flow: row wrap; /*exibe em colunas e gera uma quebra de linha*/
+            color: #754059;
+            gap: 20px;
+        }
+
+        .card p{
+            font-weight: bold;
+        }
+
+        .img{
+            border: 1px solid #754059;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            margin-bottom: 2 rem;
+            width: 600px;
+            height: 150px;
+            box-sizing: border-box;
+        }
+
+        .img img{
+            width: 125px;
+            height: 115 px;
+        }
         
         /* Tema escuro */
 
@@ -383,7 +437,40 @@
             color: #e2a9c1; 
         }
 
-       
+        /* Figuras*/
+        body.tema-escuro .card, body.tema-escuro .card p{
+            color: #e2a9c1;
+        }
+
+        body.tema-escuro  .principal a, body.tema-escuro .principal a:link{
+            color: #e2a9c1;
+        }
+
+        /* Formulário no tema escuro */
+
+        body.tema-escuro .formulario label {
+            color: #e2a9c1;
+        }
+
+
+        body.tema-escuro .formulario input,
+        body.tema-escuro .formulario textarea {
+            background-color: #333;
+            color: white;
+            border-color: #e2a9c1;
+        }
+
+        /* Modal no tema escuro */
+
+        body.tema-escuro .modal-conteudo {
+            background-color: #333;
+            color: white;
+        }
+
+        body.tema-escuro .modal-conteudo h2 {
+            color: #e2a9c1;
+        }
+               
         /* media query para dispositivos móveis */
 
         @media only screen and (max-width: 767px) {
@@ -431,6 +518,11 @@
                 width: 200px; 
                 height: 200px; 
             }
+
+             .img{
+                max-width: 128rem;
+                margin: 1rem;
+            }
         }
 
     </style>
@@ -448,8 +540,8 @@
         <ul>
             <li><a href="index.html" >Sobre mim</a></li>
             <li><a href="formacao.html">Formação</a></li>
-            <li><a href="portfolio.html">Portfólio</a></li>
-            <li><a href="contato.html" class="ativo">Contato</a></li>
+            <li><a href="portfolio.html" class="ativo">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
         </ul>
 
         <!-- Botão para alterar entre tema claro e escuro. A funionalidade será implementada no JavaScript. -->
@@ -471,17 +563,58 @@
                 
         </aside>
         <section class="principal">
-            <h1>Sobre mim</h1>
+            <h1>Portfólio - Projetos</h1>
+            
+            <div class="card">
+                <div class="img">
+                    
+                    <div class="">
+                        <a href="https://github.com/engcriscunha/voughtguard-pipeline-fraud-detection"> VoughtGuard - Pipeline de Detecção de Fraude Financeira </a> 
+                        
+                        <p> Pipeline de dados para processar transações financeiras, aplicar limpeza e validação de qualidade, gerar tabelas analíticas para o time de risco e produzir um relatório automatizado de Data Quality. Trilha Starlight Git Project </p>
+                    </div>
+            </div>
+                
+            <div class="card">
+                <div class="img">
+                    
+                    <div class="">
+                        <a href="https://github.com/engcriscunha/avanti-bean-leaf-classification"> Projeto de Classificação de Folhas de Feijão </a> 
+                        
+                        <p> Projeto de Visão Computacional para classificação de lesões em folhas de feijão, desenvolvido para o curso de Machine Learning no bootcamp Atlântico Avanti. </p>
+                    </div>
+            </div>
+                
+            <div class="card">
+                <div class="img">
+                    
+                    <div class="">
+                        <a href="https://github.com/engcriscunha/Curso-an-lise-de-dados---PrograMaria"> Análise de Dados - PrograMaria </a> 
+                        
+                        <p> Curso de análise de dados com python, noções de confecção de daschboard com Looker e noções de Machine Learning. </p>
+                    </div>
+            </div>
+ 
+            <div class="card">
+                <div class="img">
+                    
+                    <div class="">
+                        <a href="https://github.com/engcriscunha/neopix-dataops-pipeline"> NeoPix - Monitoramento e Operação de Pipelines de Pagamento </a> 
+                        
+                        <p> Desafio técnico inspirado em vaga real de Engenheiro(a) de Dados Júnior - DataOps. Trilha Starlight Git Project.</p>
+                    </div>
+            </div>
 
-            <p> Sou formada em Engenharia de Bioprocessos e Biotecnologia e atualmente estou ampliando minha formação na área de tecnologia, cursando Engenharia de Software. </p> 
 
-            <p> Minha trajetória acadêmica despertou meu interesse pela tecnologia e pela utilização de dados como ferramenta para compreender problemas e desenvolver soluções. </p> 
-            
-            <p> Atualmente estou  construindo minha transição para a área de Dados, desenvolvendo conhecimentos em programação, análise de dados, bancos de dados e Machine Learning. </p> 
-            
-            <p> Durante meus estudos, venho trabalhando com Python, Pandas, Matplotlib, SQL, Git e GitHub, além de desenvolver projetos utilizando técnicas de Machine Learning. </p> 
-            
-            <p> Este portfólio representa parte dessa jornada de aprendizado e reúne projetos, conhecimentos e experiências que venho construindo na área de tecnologia. </p>
+            <div class="card">
+                <div class="img">
+                    
+                    <div class="">
+                        <a href="https://github.com/engcriscunha/bootcamp_uninter_time5"> Bootcamp Uninter - do zero ao produto</a> 
+                        
+                        <p> Bootcamp de desenvolvimento do MedAlerta, uma aplicação de linha de comando (CLI) desenvolvida em Java com Spring Boot, cujo objetivo é auxiliar usuários no controle e regularidade do uso de medicamentos. </p>
+                    </div>
+            </div>
 
         </section>
 
