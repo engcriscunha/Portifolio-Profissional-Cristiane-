@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio Cristiane Santos da Cunha</title>
+
+    <!-- CONFIGURAÇÃO CSS -->
+    <style>
+
+        /* Configurações gerais */
+
+        body { 
+            margin: 0; 
+            font-family: Arial, Helvetica, sans-serif; 
+            background-color: white; 
+            color: #333; 
+            
+            /* Transição suave para o tema escuro */
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+
+        /* Container principal da página */
+
+        .container {
+            display: grid;
+        }
+
+
+        /* Cabeçalho da página */
+
+        header { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            background-color: #754059; 
+            color: white; 
+            padding: 20px; 
+        }
+
+
+        /* Menu de navegação */
+
+        .menu { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            padding: 15px; 
+            background-color: white; 
+        }
+    
+        .menu ul { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        .menu li { 
+            float: left; 
+        }
+
+
+        /* Estilo dos links do menu */
+
+        .menu a, 
+        .menu a:link { 
+            display: block; 
+            text-decoration: none; 
+            color: #754059; 
+            padding: 8px 16px; 
+            border: solid #754059 1px; 
+            margin-right: 5px; 
+            border-radius: 4px; 
+        }
+        
+
+        /* Efeito de hover nos links do menu */
+
+        .menu a:hover { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+
+        /* Página atual */
+
+        .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+        
+
+        /* Botão tema */
+
+        .botao-tema { 
+            border: none; 
+            background-color: transparent; 
+            font-size: 22px; 
+            cursor: pointer; 
+            padding: 8px; 
+        }
+
+
+        /* ==============================
+           ÁREA PRINCIPAL
+        ============================== */
+
+        .principal { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            padding: 30px 5%; 
+            text-align: justify; 
+        }
+
+        .principal h1 { 
+            color: #754059; 
+            text-align: center;
+        }
+
+        .principal p { 
+            color: #754059; 
+        }
+
+
+        /* ==============================
+           FORMULÁRIO DE CONTATO
+        ============================== */
+
+        .formulario-contato {
+            width: 80%;
+            max-width: 650px;
+            margin: 30px auto;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        /* Nome dos campos */
+
+        .formulario-contato label {
+            color: #754059;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
+        /* Campos do formulário */
+
+        .formulario-contato input,
+        .formulario-contato textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #754059;
+
+            border-radius: 5px;
+
+            box-sizing: border-box;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 15px;
+        }
+
+
+        /* Campo da mensagem */
+
+        .formulario-contato textarea {
+            height: 150px;
+
+            resize: vertical;
+        }
+
+
+        /* Efeito ao clicar nos campos */
+
+        .formulario-contato input:focus,
+        .formulario-contato textarea:focus {
+            outline: none;
+
+            border: 2px solid #754059;
+        }
+
+
+        /* ==============================
+           BOTÃO ENVIAR
+        ============================== */
+
+        .botao-enviar {
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            background-color: #754059;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        /* Efeito quando o mouse passa sobre o botão */
+
+        .botao-enviar:hover {
+            background-color: #5c3044;
+        }
+
+
+        /* ==============================
+           RESPOSTA DO FORMULÁRIO
+        ============================== */
+
+        #resposta-formulario {
+            display: none;
+
+            width: 80%;
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            padding: 15px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            text-align: center;
+
+            box-sizing: border-box;
+        }
+
+
+        /* Mensagem de sucesso */
+
+        #resposta-formulario.sucesso {
+            display: block;
+
+            background-color: #e5f5e5;
+
+            color: #286628;
+
+            border: 1px solid #286628;
+        }
+
+
+        /* Mensagem de erro */
+
+        #resposta-formulario.erro {
+            display: block;
+
+            background-color: #f8e5e5;
+
+            color: #9b2226;
+
+            border: 1px solid #9b2226;
+        }
+
+
+        /* ==============================
+           RODAPÉ
+        ============================== */
+
+        footer { 
+            grid-column-start: 1; 
+            grid-column-end: 12; 
+            background-color: #754059; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        footer p {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           TEMA ESCURO
+        ============================== */
+
+        body.tema-escuro { 
+            background-color: #222; 
+            color: white; 
+        }
+
+        body.tema-escuro .menu { 
+            background-color: #333; 
+        }
+        
+        body.tema-escuro .menu a { 
+            color: white; 
+            border-color: white; 
+        }
+
+        body.tema-escuro .menu a:hover, 
+        body.tema-escuro .menu a.ativo { 
+            background-color: #754059; 
+            color: white; 
+        }
+
+
+        /* Formulário no tema escuro */
+
+        body.tema-escuro .principal h1,
+        body.tema-escuro .principal p,
+        body.tema-escuro .formulario-contato label { 
+            color: #e2a9c1; 
+        }
+
+
+        body.tema-escuro .formulario-contato input,
+        body.tema-escuro .formulario-contato textarea {
+            background-color: #333;
+
+            color: white;
+
+            border-color: #e2a9c1;
+        }
+
+
+        /* ==============================
+           MEDIA QUERY PARA DISPOSITIVOS MÓVEIS
+        ============================== */
+
+        @media only screen and (max-width: 767px) {
+
+            .menu {
+                flex-wrap: wrap;
+            }
+            
+
+            .menu ul { 
+                display: flex; 
+                flex-direction: column; 
+                width: 100%; 
+                align-items: center; 
+            }
+
+            .menu li { 
+                float: none; 
+                margin-bottom: 5px; 
+            }
+
+            .menu a { 
+                width: 150px; 
+                text-align: center; 
+            }
+
+
+            .principal {
+                padding: 20px 5%;
+            }
+
+
+            .formulario-contato {
+                width: 95%;
+            }
+
+
+            #resposta-formulario {
+                width: 95%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         CABEÇALHO
+    ============================== -->
+
+    <header class="container">
+
+        <h1 style="color: white; text-align: center;">
+            Portfólio Cristiane Santos da Cunha
+        </h1>
+
+        <br>
+
+    </header>
+
+
+    <!-- ==============================
+         MENU DE NAVEGAÇÃO
+    ============================== -->
+
+    <nav class="container menu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Sobre mim
+                </a>
+            </li>
+
+            <li>
+                <a href="formacao.html">
+                    Formação
+                </a>
+            </li>
+
+            <li>
+                <a href="portfolio.html">
+                    Portfólio
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html" class="ativo">
+                    Contato
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- Botão para alterar entre tema claro e escuro -->
+
+        <button 
+            class="botao-tema" 
+            id="botao-tema" 
+            aria-label="Alternar entre tema claro e escuro">
+
+            🌙
+
+        </button>
+        
+    </nav>
+
+
+    <!-- ==============================
+         CONTEÚDO PRINCIPAL
+    ============================== -->
+
+    <main class="principal">
+
+        <h1>Entre em contato</h1>
+
+        <p style="text-align: center;">
+            Preencha o formulário abaixo para entrar em contato comigo.
+        </p>
+
+
+        <!-- Formulário de contato -->
+
+        <form id="formulario-contato" class="formulario-contato">
+
+
+            <!-- Campo Nome -->
+
+            <label for="nome">
+                Nome:
+            </label>
+
+            <input 
+                type="text" 
+                id="nome" 
+                name="nome"
+                placeholder="Digite seu nome">
+
+
+            <!-- Campo E-mail -->
+
+            <label for="email">
+                E-mail:
+            </label>
+
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="Digite seu e-mail">
+
+
+            <!-- Campo Mensagem -->
+
+            <label for="mensagem">
+                Mensagem:
+            </label>
+
+            <textarea 
+                id="mensagem" 
+                name="mensagem"
+                placeholder="Digite sua mensagem"></textarea>
+
+
+            <!-- Botão de envio -->
+
+            <button 
+                type="submit" 
+                class="botao-enviar">
+
+                Enviar mensagem
+
+            </button>
+
+        </form>
+
+
+        <!--
+            O JavaScript utilizará este espaço
+            para apresentar a resposta ao usuário.
+        -->
+
+        <div id="resposta-formulario"></div>
+
+    </main>
+
+
+    <!-- ==============================
+         RODAPÉ
+    ============================== -->
+
+    <footer class="container">
+
+        <p>
+            © 2026 Desenvolvido por Cristiane Santos da Cunha
+        </p>
+
+    </footer>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        /* ==========================================
+           ALTERAÇÃO ENTRE TEMA CLARO E ESCURO
+        ========================================== */
+
+        const botaoTema = document.getElementById('botao-tema');
+
+        const body = document.body;
+
+
+        botaoTema.addEventListener('click', function () {
+
+            body.classList.toggle('tema-escuro');
+
+
+            if (body.classList.contains('tema-escuro')) {
+
+                botaoTema.textContent = '☀️';
+
+                // Ícone do sol para tema escuro
+
+            } else {
+
+                botaoTema.textContent = '🌙';
+
+                // Ícone da lua para tema claro
+
+            }
+
+        });
+
+
+        /* ==========================================
+           FORMULÁRIO DE CONTATO
+        ========================================== */
+
+        const formularioContato =
+            document.getElementById('formulario-contato');
+
+        const respostaFormulario =
+            document.getElementById('resposta-formulario');
+
+
+        /* Evento executado quando o usuário
+           clicar no botão Enviar mensagem */
+
+        formularioContato.addEventListener('submit', function(event) {
+
+            /* Impede que a página seja recarregada */
+
+            event.preventDefault();
+
+
+            /* Captura os valores digitados */
+
+            const nome =
+                document.getElementById('nome').value.trim();
+
+            const email =
+                document.getElementById('email').value.trim();
+
+            const mensagem =
+                document.getElementById('mensagem').value.trim();
+
+
+            /* ==========================================
+               VERIFICAÇÃO DOS CAMPOS
+            ========================================== */
+
+            if (nome === '' || email === '' || mensagem === '') {
+
+                respostaFormulario.className = 'erro';
+
+                respostaFormulario.textContent =
+                    'Por favor, preencha todos os campos antes de enviar a mensagem.';
+
+                return;
+            }
+
+
+            /* ==========================================
+               VERIFICAÇÃO DO E-MAIL
+            ========================================== */
+
+            const formatoEmail =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (!formatoEmail.test(email)) {
+
+                respostaFormulario.className = 'erro';
+
+                respostaFormulario.textContent =
+                    'Por favor, informe um endereço de e-mail válido.';
+
+                return;
+            }
+
+
+            /* ==========================================
+               SIMULAÇÃO DO ENVIO
+            ========================================== */
+
+            respostaFormulario.className = 'sucesso';
+
+            respostaFormulario.textContent =
+                'Mensagem enviada com sucesso! Obrigada pelo contato, '
+                + nome
+                + '.';
+
+
+            /* Limpa os campos do formulário */
+
+            formularioContato.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
