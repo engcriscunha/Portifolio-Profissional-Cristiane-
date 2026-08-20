@@ -705,8 +705,128 @@
         // Ícone da lua para tema claro
         }});
 
-    </script>
+         /* Formulário  */
 
-        
+        // Obtém o formulário
+
+        const formulario =
+            document.getElementById('formularioContato');
+
+        // Obtém os elementos da caixa de mensagem
+
+        const modal =
+            document.getElementById('modalMensagem');
+
+        const tituloModal =
+            document.getElementById('tituloModal');
+
+        const textoModal =
+            document.getElementById('textoModal');
+
+        const botaoFechar =
+            document.getElementById('botaoFechar');
+
+        // Detecta quando o usuário tenta enviar o formulário
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Captura os valores digitados
+
+            const nome =
+                document.getElementById('nome').value.trim();
+
+            const email =
+                document.getElementById('email').value.trim();
+
+            const mensagem =
+                document.getElementById('mensagem').value.trim();
+
+            // Verifica se algum campo está vazio
+
+            if (
+                nome === '' ||
+                email === '' ||
+                mensagem === ''
+            ) {
+
+                // Define a mensagem de erro
+
+                tituloModal.textContent =
+                    'Atenção!';
+
+                textoModal.textContent =
+                    'Por favor, preencha todos os campos do formulário.';
+
+                // Exibe a caixa de mensagem
+
+                modal.style.display = 'flex';
+
+                // Interrompe a execução
+                return;
+            }
+
+            /* Validação do e-mail */
+
+            /*
+                Expressão regular utilizada para verificar
+                se o e-mail possui um formato básico válido.
+
+                Exemplo:
+                usuario@dominio.com
+            */
+
+            const formatoEmail =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Verifica o formato do e-mail
+
+            if (
+                !formatoEmail.test(email)
+            ) {
+
+                tituloModal.textContent =
+                    'E-mail inválido!';
+
+                textoModal.textContent =
+                    'Digite um endereço de e-mail válido. Exemplo: usuario@dominio.com';
+
+                // Exibe a caixa de mensagem
+
+                modal.style.display = 'flex';
+
+                return;
+            }
+
+            /* Envio Simulado */
+
+            tituloModal.textContent =
+                'Mensagem enviada com sucesso!';
+
+            textoModal.textContent =
+                'Obrigada pelo contato, ' +
+                nome +
+                '! Sua mensagem foi recebida.';
+
+            // Exibe a caixa de confirmação
+
+            modal.style.display = 'flex';
+
+            /* Limpa os campos do formulário depois do envio simulado */
+
+            formulario.reset();
+        });
+
+        /* Botão fechar da caixa */
+
+        botaoFechar.addEventListener('click', function() {
+
+            // Esconde a caixa de mensagem
+
+            modal.style.display = 'none';
+        });
+
+    </script>
+  
 </body>
 </html>
