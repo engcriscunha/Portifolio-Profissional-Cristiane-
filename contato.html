@@ -218,6 +218,17 @@
             font-size: 15px;
         }
 
+        /* Cor da borda quando o usuário clica no campo */
+        .formulario input:focus,
+        .formulario textarea:focus {
+
+        outline: none;
+        border: 2px solid #754059;
+
+        /* Pequeno destaque ao redor do campo */
+        box-shadow: 0 0 5px rgba(117, 64, 89, 0.4);
+        }
+
         /* Área da mensagem */
 
         .formulario textarea {
@@ -284,6 +295,8 @@
         .modal-conteudo h2 {
             color: #754059;
         }
+
+        
 
         /* Botão para fechar a caixa */
 
